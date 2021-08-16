@@ -16,3 +16,13 @@ Fuel_data.isnull().sum()
 
 #percentage change in fuel per unit burned in 1998 compared to 1994 
 Fuel_data.groupby(['report_year','fuel_type_code_pudl'])['fuel_cost_per_unit_burned'].sum()
+
+#skewness and kurtosis of fuel qyantity burned
+import pandas as py
+Fuel_data.skew(axis=0, skipna= True)
+
+#kurtosis of fuel_qty_burned
+Fuel_data.kurt(axis=0, skipna= True)
+
+#feature with second and third lowest correlation with fuel cost per unit price
+Fuel_data.corr(method= 'pearson')
